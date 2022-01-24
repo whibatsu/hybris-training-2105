@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hybrisconfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="resources/schemas/extensions.xsd">
+    <extensions>
+        <!--
+                All extensions located in ${HYBRIS_BIN_DIR}/platform/ext are automatically loaded.
+                More information about how to configure available extensions can be found here : https://wiki.hybris.com/x/nZVzC
+        -->
+        <path dir="${HYBRIS_BIN_DIR}" />
+                                        
+        <extension name="adaptivesearch"/>
+        <extension name="adaptivesearchbackoffice"/>
+        <extension name="adaptivesearchfacades"/>
+        <extension name="adaptivesearchsamplesaddon"/>
+        <extension name="adaptivesearchsolr"/>
+        <extension name="adaptivesearchwebservices"/>
+        <extension name="backofficesolrsearch"/>
+        <extension name="solrfacetsearch"/>
+        <extension name="solrfacetsearchbackoffice"/>
+        <extension name="solrserver"/>
+        <extension name="backofficesearchservices"/>
+        <extension name="searchbackoffice"/>
+        
+        <extension name="cmswebservices"/>
+        <extension name="permissionswebservices"/>
+        <!--<extension name="smarteditwebservices"/>-->
+        <!--<extension name="cmssmarteditwebservices"/>-->
+        <!--<extension name="smarteditaddon"/>-->
+        <!--<extension name="cmssmartedit"/>-->
+        <extension name="cmsbackoffice"/>
+        <extension name="cmsoccaddon"/>
+        <extension name="trainingcore" />
+        <extension name="trainingbackoffice" />
+        <extension name="trainingfacades" />
+        <extension name="trainingfulfilmentprocess" />
+        <extension name="traininginitialdata" />
+        <extension name="trainingstorefront" />
+
+    </extensions>
+</hybrisconfig>
