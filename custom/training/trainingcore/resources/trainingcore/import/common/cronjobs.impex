@@ -38,3 +38,15 @@ INSERT_UPDATE Trigger;cronJob(code)[unique=true];second[default=0];minute[defaul
 ;ticketsRetentionCronJob;
 # Run the CloseStagnantServiceTicketsJob at 12:05 AM every day
 ;ticketsStagnationJob;;;12;0;;;;true;
+
+INSERT_UPDATE ServiceLayerJob;  code[unique=true]; springId[unique=true]
+                             ;  myJob            ; myJobPerformable
+                             ;  timeJob          ; timeLog
+
+INSERT_UPDATE CronJob;  code[unique=true];  job(code);  sessionLanguage(isocode)[default=en]
+                     ;  myCronJob        ;  myJob    ;  en
+                     ;  timeCronJob      ;  timeJob  ;  en
+
+INSERT_UPDATE Trigger;  cronJob(code)[unique=true] ;    active;   cronExpression
+                     ;  myCronJob                  ;    true  ;   0 0/1 * 1/1 * ? *
+                     ;  timeCronJob                ;    true  ;   0 0 22 ? * FRI *

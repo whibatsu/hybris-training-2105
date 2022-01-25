@@ -16,3 +16,21 @@ INSERT_UPDATE Category; code[unique = true]; $catalogVersion; supercategories(co
                       ; FASHION            ;                ;                                       ;                                                  ;
                       ; SHIRT              ;                ; FASHION                               ;                                                  ; 1
                       ; TROUSER            ;                ; FASHION                               ;                                                  ; 2
+
+# Insert Province
+INSERT_UPDATE Province; code[unique=true];name
+                    ;001            ;Jawa Barat
+                    ;002            ;DKI Jakarta
+                    ;003            ;Banten
+
+# Insert City
+INSERT_UPDATE City; code[unique=true];name
+                      ;001            ;Bandung
+                      ;002            ;Jakarta
+                      ;003            ;Tangerang
+
+# Insert Supplier
+INSERT_UPDATE Supplier;code[unique=true];TrainingVariantProduct(code);name                 ;city(code)  ;province(code)
+                      ;1                ;PB-SHIRT-1                  ;01                   ;001         ;001
+                      ;2                ;PB-SHIRT-2                  ;02                   ;002         ;002
+                      ;3                ;CV-S1                       ;03                   ;003         ;003

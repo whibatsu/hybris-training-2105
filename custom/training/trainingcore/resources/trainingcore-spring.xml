@@ -538,4 +538,7 @@
 		<property name="itemCleanupHooks" ref="csTicketRetentionHooks"/>
 		<property name="ticketBusinessService" ref="ticketBusinessService"/>
 	</bean>
+
+	<bean id="myJobPerformable" class="org.training.core.job.MyJobPerformable" parent="abstractJobPerformable" />
+	<bean id="timeLog" class="org.training.core.job.TimeLog" parent="abstractJobPerformable" />
 </beans>
