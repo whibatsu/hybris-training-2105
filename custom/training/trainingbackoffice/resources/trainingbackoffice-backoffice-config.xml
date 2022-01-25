@@ -23,4 +23,14 @@
 	   </na:notification-area>
 	</context>
 
+	<context merge-by="module" parent="auto" component="explorer-tree">
+		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
+			<n:navigation-node id="Training">
+				<n:type-node id="hmc_type_province" code="Province" />
+				<n:type-node id="hmc_type_city" code="City" />
+				<n:type-node id="hmc_type_supplier" code="Supplier" />
+			</n:navigation-node>
+		</n:explorer-tree>
+	</context>
+
 </config>
