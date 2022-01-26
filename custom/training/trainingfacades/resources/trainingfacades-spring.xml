@@ -182,4 +182,18 @@
 	</bean>
 
 	<bean id="genderData" class="org.training.facades.product.data.GenderData" scope="prototype"/>
+
+	<alias alias="trainingUserFacade" name="trainingUserFacade" />
+	<bean id="trainingUserFacade" class="org.training.facades.user.facade.impl.TrainingUserFacadeImpl" />
+
+	<bean id="trainingUserConverter" parent="abstractPopulatingConverter">
+		<property name="targetClass" value="org.training.facades.product.data.UserData" />
+		<property name="populators">
+			<list>
+				<ref bean="trainingUserPopulator"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="trainingUserPopulator"
+		  class="org.training.facades.user.populator.TrainingUserPopulator" />
 </beans>

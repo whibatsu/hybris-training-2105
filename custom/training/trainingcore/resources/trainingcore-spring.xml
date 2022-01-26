@@ -541,4 +541,14 @@
 
 	<bean id="myJobPerformable" class="org.training.core.job.MyJobPerformable" parent="abstractJobPerformable" />
 	<bean id="timeLog" class="org.training.core.job.TimeLog" parent="abstractJobPerformable" />
+
+	<alias alias="trainingUserService" name="trainingUserService" />
+	<bean id="trainingUserService" class="org.training.core.user.service.impl.TrainingUserServiceImpl" />
+	<alias alias="trainingUserDao" name="trainingUserDao" />
+	<bean id="trainingUserDao" class="org.training.core.user.dao.impl.TrainingUserDaoImpl" />
+
+	<alias alias="trainingProductService" name="trainingProductService" />
+	<bean id="trainingProductService" class="org.training.core.product.service.impl.TrainingProductServiceImpl" />
+	<alias alias="trainingProductDao" name="trainingProductDao" />
+	<bean id="trainingProductDao" class="org.training.core.product.dao.impl.TrainingProductDaoImpl" />
 </beans>

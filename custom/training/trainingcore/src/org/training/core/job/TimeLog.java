@@ -8,7 +8,8 @@ import de.hybris.platform.servicelayer.cronjob.AbstractJobPerformable;
 import de.hybris.platform.servicelayer.cronjob.PerformResult;
 import org.apache.log4j.Logger;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class TimeLog extends AbstractJobPerformable<CronJobModel> {
 
@@ -16,8 +17,9 @@ public class TimeLog extends AbstractJobPerformable<CronJobModel> {
     @Override
     public PerformResult perform(final CronJobModel cronJobModel){
 
-        LocalDateTime localDateTime = LocalDateTime.now();
-        LOG.info("Cronjob is running successfully! Right now is " + localDateTime);
+        LocalTime localTime = LocalTime.now();
+        LocalDate localDate = LocalDate.now();
+        LOG.info("TimeLog is running! Recent time is " + localTime +" and recent date is "+ localDate);
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
     }
 }
