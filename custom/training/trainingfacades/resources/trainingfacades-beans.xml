@@ -12,4 +12,25 @@
 		<property name="code" type="String"/>
 		<property name="name" type="String"/>
 	</bean>
+
+	<bean class="org.training.facades.product.data.UserData">
+		<property name="email" type="String" />
+		<property name="id" type="String" />
+		<property name="phone" type="org.training.facades.product.data.PhoneData" />
+		<property name="name" type="String" />
+	</bean>
+	<bean class="org.training.facades.product.data.PhoneData">
+		<property name="code" type="String" />
+		<property name="number" type="String" />
+	</bean>
+	<bean class="org.training.facades.product.data.ProductData">
+		<property name="name" type="String" />
+		<property name="id" type="String" />
+		<property name="price" type="org.training.facades.product.data.PriceData" />
+		<property name="quantity" type="Integer" />
+	</bean>
+	<bean class="org.training.facades.product.data.PriceData">
+		<property name="code" type="String" />
+		<property name="value" type="Integer" />
+	</bean>
 </beans>

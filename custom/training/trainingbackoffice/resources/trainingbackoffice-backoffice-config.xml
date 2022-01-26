@@ -27,29 +27,29 @@
 	<context merge-by="module" parent="auto" component="explorer-tree">
 		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
 			<n:navigation-node id="Training">
-				<n:type-node id="Province" code="Province" />
-				<n:type-node id="City" code="City" />
-				<n:type-node id="Supplier" code="Supplier" />
+				<n:type-node id="hmc_type_province" code="Province" />
+				<n:type-node id="hmc_type_city" code="City" />
+				<n:type-node id="hmc_type_supplier" code="Supplier" />
 			</n:navigation-node>
 		</n:explorer-tree>
 	</context>
 
 <!--	Listview-->
-	<context type="Province" component="listView">
+	<context type="Province" component="listview">
 		<lv:list-view xmlns:lv="http://www.hybris.com/cockpitng/component/listView">
 			<lv:column spring-bean="previewListCellRenderer" />
 			<lv:column qualifier="code" />
 			<lv:column qualifier="name" />
 		</lv:list-view>
 	</context>
-	<context type="City" component="listView">
+	<context type="City" component="listview">
 		<lv:list-view xmlns:lv="http://www.hybris.com/cockpitng/component/listView">
 			<lv:column spring-bean="previewListCellRenderer" />
 			<lv:column qualifier="code" />
 			<lv:column qualifier="name" />
 		</lv:list-view>
 	</context>
-	<context type="Supplier" component="listView">
+	<context type="Supplier" component="listview">
 		<lv:list-view xmlns:lv="http://www.hybris.com/cockpitng/component/listView">
 			<lv:column spring-bean="previewListCellRenderer" />
 			<lv:column qualifier="code" />
