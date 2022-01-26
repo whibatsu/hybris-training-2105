@@ -30,7 +30,7 @@ INSERT_UPDATE City; code[unique=true];name
                       ;003            ;Tangerang
 
 # Insert Supplier
-INSERT_UPDATE Supplier;code[unique=true];TrainingVariantProduct(code);name                 ;city(code)  ;province(code)
-                      ;1                ;PB-SHIRT-1                  ;01                   ;001         ;001
-                      ;2                ;PB-SHIRT-2                  ;02                   ;002         ;002
-                      ;3                ;CV-S1                       ;03                   ;003         ;003
+INSERT_UPDATE Supplier;code[unique=true];name                 ;city(code)  ;province(code)
+                      ;1                ;01                   ;001         ;001
+                      ;2                ;02                   ;002         ;002
+                      ;3                ;03                   ;003         ;003

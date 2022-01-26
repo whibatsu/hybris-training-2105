@@ -23,14 +23,104 @@
 	   </na:notification-area>
 	</context>
 
+<!--	ExplorerTree-->
 	<context merge-by="module" parent="auto" component="explorer-tree">
 		<n:explorer-tree xmlns:n="http://www.hybris.com/cockpitng/config/explorertree">
 			<n:navigation-node id="Training">
-				<n:type-node id="hmc_type_province" code="Province" />
-				<n:type-node id="hmc_type_city" code="City" />
-				<n:type-node id="hmc_type_supplier" code="Supplier" />
+				<n:type-node id="Province" code="Province" />
+				<n:type-node id="City" code="City" />
+				<n:type-node id="Supplier" code="Supplier" />
 			</n:navigation-node>
 		</n:explorer-tree>
 	</context>
 
+<!--	Listview-->
+	<context type="Province" component="listView">
+		<lv:list-view xmlns:lv="http://www.hybris.com/cockpitng/component/listView">
+			<lv:column spring-bean="previewListCellRenderer" />
+			<lv:column qualifier="code" />
+			<lv:column qualifier="name" />
+		</lv:list-view>
+	</context>
+	<context type="City" component="listView">
+		<lv:list-view xmlns:lv="http://www.hybris.com/cockpitng/component/listView">
+			<lv:column spring-bean="previewListCellRenderer" />
+			<lv:column qualifier="code" />
+			<lv:column qualifier="name" />
+		</lv:list-view>
+	</context>
+	<context type="Supplier" component="listView">
+		<lv:list-view xmlns:lv="http://www.hybris.com/cockpitng/component/listView">
+			<lv:column spring-bean="previewListCellRenderer" />
+			<lv:column qualifier="code" />
+			<lv:column qualifier="city" />
+			<lv:column qualifier="province" />
+		</lv:list-view>
+	</context>
+
+<!--	Set Molds-->
+	<context type="Province" component="collection-browser">
+		<cb:collection-browser xmlns:cb="http://www.hybris.com/cockpitng/config/collectionbrowser">
+			<cb:available-molds default-mold="list-view">
+				<cb:mold spring-bean="listViewCollectionBrowserMoldStrategy"/>
+				<cb:mold spring-bean="gridViewCollectionBrowserMoldStrategy"/>
+			</cb:available-molds>
+		</cb:collection-browser>
+	</context>
+	<context type="City" component="collection-browser">
+		<cb:collection-browser xmlns:cb="http://www.hybris.com/cockpitng/config/collectionbrowser">
+			<cb:available-molds default-mold="list-view">
+				<cb:mold spring-bean="listViewCollectionBrowserMoldStrategy"/>
+				<cb:mold spring-bean="gridViewCollectionBrowserMoldStrategy"/>
+			</cb:available-molds>
+		</cb:collection-browser>
+	</context>
+	<context type="Supplier" component="collection-browser">
+		<cb:collection-browser xmlns:cb="http://www.hybris.com/cockpitng/config/collectionbrowser">
+			<cb:available-molds default-mold="list-view">
+				<cb:mold spring-bean="listViewCollectionBrowserMoldStrategy"/>
+				<cb:mold spring-bean="gridViewCollectionBrowserMoldStrategy"/>
+			</cb:available-molds>
+		</cb:collection-browser>
+	</context>
+
+<!--	EditorAreaWidget-->
+	<context merge-by="type" parent="GenericItem" type="City" component="editor-area" module="astramarketplacebackoffice">
+		<ea:editorArea xmlns:ea="http://www.hybris.com/cockpitng/component/editorArea">
+			<ea:tab name="hmc.properties">
+			</ea:tab>
+			<ea:essentials>
+				<ea:essentialSection name="hmc.essential">
+					<ea:attribute qualifier="code" />
+					<ea:attribute qualifier="name" />
+				</ea:essentialSection>
+			</ea:essentials>
+		</ea:editorArea>
+	</context>
+
+	<context type="Province" component="advanced-search">
+		<as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+			<as:field-list>
+				<as:field name="code" operator="contains" selected="true"/>
+				<as:field name="name" operator="contains" selected="true"/>
+			</as:field-list>
+		</as:advanced-search>
+	</context>
+	<context type="City" component="advanced-search">
+		<as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+			<as:field-list>
+				<as:field name="code" operator="contains" selected="true"/>
+				<as:field name="name" operator="contains" selected="true"/>
+			</as:field-list>
+		</as:advanced-search>
+	</context>
+	<context type="Supplier" component="advanced-search">
+		<as:advanced-search xmlns:as="http://www.hybris.com/cockpitng/config/advancedsearch" connection-operator="AND">
+			<as:field-list>
+				<as:field name="code" operator="contains" selected="true"/>
+				<as:field name="city" operator="contains" selected="true"/>
+				<as:field name="province" operator="contains" selected="true"/>
+			</as:field-list>
+		</as:advanced-search>
+	</context>
 </config>
