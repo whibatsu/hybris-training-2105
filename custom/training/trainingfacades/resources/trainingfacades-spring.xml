@@ -186,6 +186,9 @@
 	<alias alias="trainingUserFacade" name="trainingUserFacade" />
 	<bean id="trainingUserFacade" class="org.training.facades.user.facade.impl.TrainingUserFacadeImpl" />
 
+	<alias alias="trainingSupplierFacade" name="trainingSupplierFacade" />
+	<bean id="trainingSupplierFacade" class="org.training.facades.supplier.facade.impl.TrainingSupplierFacadeImpl" />
+
 	<bean id="trainingUserConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.training.facades.product.data.UserData" />
 		<property name="populators">

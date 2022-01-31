@@ -42,11 +42,14 @@ INSERT_UPDATE Trigger;cronJob(code)[unique=true];second[default=0];minute[defaul
 INSERT_UPDATE ServiceLayerJob;  code[unique=true]; springId[unique=true]
                              ;  myJob            ; myJobPerformable
                              ;  timeJob          ; timeLog
+                             ;  listJob          ; listSupplierLog
 
 INSERT_UPDATE CronJob;  code[unique=true];  job(code);  sessionLanguage(isocode)[default=en]
                      ;  myCronJob        ;  myJob    ;  en
                      ;  timeCronJob      ;  timeJob  ;  en
+                     ;  listCronJob      ;  listJob  ;  en
 
 INSERT_UPDATE Trigger;  cronJob(code)[unique=true] ;    active;   cronExpression
                      ;  myCronJob                  ;    true  ;   0 0/1 * 1/1 * ? *
                      ;  timeCronJob                ;    true  ;   0 0 22 ? * FRI *
+                     ;  listCronJob                ;    true  ;   0 0 0 1/1 * ? *

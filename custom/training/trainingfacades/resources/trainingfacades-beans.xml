@@ -33,4 +33,12 @@
 		<property name="code" type="String" />
 		<property name="value" type="Integer" />
 	</bean>
+
+	<bean class="org.training.facades.product.data.SupplierData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+		<property name="city" type="String"/>
+		<property name="province" type="String"/>
+		<property name="status" type="String"/>
+	</bean>
 </beans>

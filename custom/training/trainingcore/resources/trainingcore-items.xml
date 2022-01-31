@@ -25,6 +25,12 @@
             <value code="WHITE"/>
             <value code="YELLOW"/>
         </enumtype>
+
+        <enumtype code="StatusEnum" generate="true" autocreate="true" dynamic="true">
+            <value code="VERIFIED"/>
+            <value code="IN_REVIEW"/>
+            <value code="NOT_VERIFIED"/>
+        </enumtype>
     </enumtypes>
 
     <relations>
@@ -198,6 +204,11 @@
                     </attribute>
                     <attribute qualifier="city" type="City">
                         <modifiers read="true" write="true" search="true" unique="true"/>
+                        <persistence type="property"/>
+                    </attribute>
+                    <attribute qualifier="status" type="StatusEnum">
+                        <modifiers read="true" write="true" search="true" />
+                        <defaultvalue>em().getEnumerationValue("StatusEnum", "NOT_VERIFIED")</defaultvalue>
                         <persistence type="property"/>
                     </attribute>
                 </attributes>
