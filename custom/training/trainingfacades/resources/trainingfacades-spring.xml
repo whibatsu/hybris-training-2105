@@ -199,4 +199,13 @@
 	</bean>
 	<bean id="trainingUserPopulator"
 		  class="org.training.facades.user.populator.TrainingUserPopulator" />
+
+	<alias name="defaultTrainingSearchResultProductPopulator" alias="trainingSearchResultProductPopulator"/>
+	<bean id="defaultTrainingSearchResultProductPopulator" class="org.training.facades.populators.TrainingSearchResultProductPopulator" parent="defaultCommerceSearchResultProductPopulator">
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="commerceSearchResultProductConverter"/>
+		<property name="add" ref="trainingSearchResultProductPopulator"/>
+	</bean>
 </beans>

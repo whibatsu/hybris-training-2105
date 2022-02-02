@@ -183,6 +183,16 @@
                         <modifiers optional="true" initial="true"/>
                         <persistence type="property" />
                     </attribute>
+                    <attribute qualifier="color" type="java.lang.String">
+                        <description>Color</description>
+                        <modifiers optional="true" initial="true"/>
+                        <persistence type="property" />
+                    </attribute>
+                    <attribute qualifier="rating" type="java.lang.String">
+                        <description>Rating</description>
+                        <modifiers optional="true" initial="true"/>
+                        <persistence type="property" />
+                    </attribute>
                 </attributes>
             </itemtype>
 
