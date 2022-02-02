@@ -18,19 +18,19 @@ INSERT_UPDATE Category; code[unique = true]; $catalogVersion; supercategories(co
                       ; TROUSER            ;                ; FASHION                               ;                                                  ; 2
 
 # Insert Province
-INSERT_UPDATE Province; code[unique=true];name
-                    ;001            ;Jawa Barat
-                    ;002            ;DKI Jakarta
-                    ;003            ;Banten
+INSERT_UPDATE Province; code[unique=true]; name
+                      ; 001                ; Jawa Barat
+                      ; 002                ; DKI Jakarta
+                      ; 003                ; Banten
 
 # Insert City
-INSERT_UPDATE City; code[unique=true];name
-                      ;001            ;Bandung
-                      ;002            ;Jakarta
-                      ;003            ;Tangerang
+INSERT_UPDATE City; code[unique = true]; name
+                  ; 001                ; Bandung
+                  ; 002                ; Jakarta
+                  ; 003                ; Tangerang
 
 # Insert Supplier
-INSERT_UPDATE Supplier;code[unique=true];name                 ;city(code)  ;province(code)
-                      ;1                ;01                   ;001         ;001
-                      ;2                ;02                   ;002         ;002
-                      ;3                ;03                   ;003         ;003
+INSERT_UPDATE Supplier; code[unique = true]; name; city(code); province(code)
+                      ; 1                  ; Supplier1  ; 001       ; 001
+                      ; 2                  ; Supplier2  ; 002       ; 002
+                      ; 3                  ; Supplier3  ; 003       ; 003

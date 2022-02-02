@@ -34,6 +34,8 @@
         <extension name="trainingfulfilmentprocess" />
         <extension name="traininginitialdata" />
         <extension name="trainingstorefront" />
+        <extension name="trainingextension"/>
+
 
     </extensions>
 </hybrisconfig>

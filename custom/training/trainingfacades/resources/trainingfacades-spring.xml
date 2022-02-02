@@ -186,6 +186,9 @@
 	<alias alias="trainingUserFacade" name="trainingUserFacade" />
 	<bean id="trainingUserFacade" class="org.training.facades.user.facade.impl.TrainingUserFacadeImpl" />
 
+	<alias alias="trainingSupplierFacade" name="trainingSupplierFacade" />
+	<bean id="trainingSupplierFacade" class="org.training.facades.supplier.facade.impl.TrainingSupplierFacadeImpl" />
+
 	<bean id="trainingUserConverter" parent="abstractPopulatingConverter">
 		<property name="targetClass" value="org.training.facades.product.data.UserData" />
 		<property name="populators">
@@ -196,4 +199,13 @@
 	</bean>
 	<bean id="trainingUserPopulator"
 		  class="org.training.facades.user.populator.TrainingUserPopulator" />
+
+	<alias name="defaultTrainingSearchResultProductPopulator" alias="trainingSearchResultProductPopulator"/>
+	<bean id="defaultTrainingSearchResultProductPopulator" class="org.training.facades.populators.TrainingSearchResultProductPopulator" parent="defaultCommerceSearchResultProductPopulator">
+	</bean>
+
+	<bean parent="modifyPopulatorList">
+		<property name="list" ref="commerceSearchResultProductConverter"/>
+		<property name="add" ref="trainingSearchResultProductPopulator"/>
+	</bean>
 </beans>

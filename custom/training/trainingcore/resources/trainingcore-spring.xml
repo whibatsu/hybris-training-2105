@@ -41,6 +41,12 @@
         <property name="priceService" ref="priceService"/>
     </bean>
 
+	<bean id="supplierValueProvider" class="org.training.core.provider.SupplierValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
+	<bean id="ratingValueProvider" class="org.training.core.provider.RatingValueProvider" parent="abstractPropertyFieldValueProvider">
+		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
+	</bean>
 
 	<bean id="electronicsCategorySource" parent="abstractCategorySource">
 		<property name="rootCategory" value="1"/>
@@ -541,6 +547,7 @@
 
 	<bean id="myJobPerformable" class="org.training.core.job.MyJobPerformable" parent="abstractJobPerformable" />
 	<bean id="timeLog" class="org.training.core.job.TimeLog" parent="abstractJobPerformable" />
+	<bean id="listSupplierLog" class="org.training.core.job.ListSupplier" parent="abstractJobPerformable" />
 
 	<alias alias="trainingUserService" name="trainingUserService" />
 	<bean id="trainingUserService" class="org.training.core.user.service.impl.TrainingUserServiceImpl" />
@@ -551,4 +558,9 @@
 	<bean id="trainingProductService" class="org.training.core.product.service.impl.TrainingProductServiceImpl" />
 	<alias alias="trainingProductDao" name="trainingProductDao" />
 	<bean id="trainingProductDao" class="org.training.core.product.dao.impl.TrainingProductDaoImpl" />
+
+	<alias alias="trainingSupplierService" name="trainingSupplierService" />
+	<bean id="trainingSupplierService" class="org.training.core.supplier.service.impl.TrainingSupplierServiceImpl" />
+	<alias alias="trainingSupplierDao" name="trainingSupplierDao" />
+	<bean id="trainingSupplierDao" class="org.training.core.supplier.dao.impl.TrainingSupplierDaoImpl" />
 </beans>

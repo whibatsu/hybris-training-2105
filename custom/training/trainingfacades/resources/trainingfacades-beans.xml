@@ -6,6 +6,11 @@
 
 	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
 		<property name="genders" type="java.util.List&lt;org.training.facades.product.data.GenderData>"/>
+		<property name="sku" type="String"/>
+		<property name="material" type="String"/>
+		<property name="supplier" type="String"/>
+		<property name="color" type="String"/>
+		<property name="rating" type="String"/>
 	</bean>
 
 	<bean class="org.training.facades.product.data.GenderData">
@@ -32,5 +37,13 @@
 	<bean class="org.training.facades.product.data.PriceData">
 		<property name="code" type="String" />
 		<property name="value" type="Integer" />
+	</bean>
+
+	<bean class="org.training.facades.product.data.SupplierData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+		<property name="city" type="String"/>
+		<property name="province" type="String"/>
+		<property name="status" type="String"/>
 	</bean>
 </beans>

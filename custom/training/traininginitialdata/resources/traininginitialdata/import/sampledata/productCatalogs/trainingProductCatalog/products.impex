@@ -19,12 +19,14 @@ INSERT_UPDATE TrainingProduct; code[unique = true]; name        ; $supercategori
                              ; HURLEY             ; Hurley      ; "SHIRT"         ;                                                      ;          ;                             ;
                              ; COLE               ; Cole        ; "TROUSER"       ;                                                      ;          ;                             ;
 
-INSERT_UPDATE TrainingVariantProduct; $baseProduct; code[unique = true]; sku   ; material; unit(code)[default = pieces]; $approved; $catalogVersion; $supercategories; description
-                                    ; PULLNBEAR   ; PB-SHIRT-1         ; PBT1  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Pull & Bear T-Shirt
-                                    ; PULLNBEAR   ; PB-SHIRT-2         ; PBT2  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Pull & Bear T-Shirt
-                                    ; CONVERSE    ; CV-S1              ; CVS1  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Converse T-Shirt
-                                    ; CONVERSE    ; CV-S2              ; CVS2  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Converse T-Shirt
-                                    ; HURLEY      ; HURLEY-T-1         ; HT1   ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Hurley T-Shirt
-                                    ; HURLEY      ; HURLEY-T-2         ; HT2   ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Hurley T-Shirt
-                                    ; COLE        ; COLE-T-1           ; COL1  ; Jeans   ;                             ;          ;                ; "TROUSER"       ; Cole Jeans
-                                    ; COLE        ; COLE-C-1           ; COLC1 ; Chino   ;                             ;          ;                ; "TROUSER"       ; Cole Chino
+INSERT_UPDATE TrainingVariantProduct; $baseProduct; code[unique = true]; sku   ; material; unit(code)[default = pieces]; $approved; $catalogVersion; $supercategories; description; color   ; rating
+                                    ; PULLNBEAR   ; PB-SHIRT-1         ; PBT1  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Pull & Bear T-Shirt  ; Red       ; 1.0
+                                    ; PULLNBEAR   ; PB-SHIRT-2         ; PBT2  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Pull & Bear T-Shirt  ; Yellow    ; 2.0
+                                    ; CONVERSE    ; CV-S1              ; CVS1  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Converse T-Shirt     ; Green     ; 3.0
+                                    ; CONVERSE    ; CV-S2              ; CVS2  ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Converse T-Shirt     ; Blue      ; 4.0
+                                    ; HURLEY      ; HURLEY-T-1         ; HT1   ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Hurley T-Shirt       ; Red       ; 5.0
+                                    ; HURLEY      ; HURLEY-T-2         ; HT2   ; Cotton  ;                             ;          ;                ; "SHIRT"         ; Hurley T-Shirt       ; Yellow    ; 1.0
+                                    ; COLE        ; COLE-T-1           ; COL1  ; Jeans   ;                             ;          ;                ; "TROUSER"       ; Cole Jeans           ; Green     ; 2.0
+                                    ; COLE        ; COLE-C-1           ; COLC1 ; Chino   ;                             ;          ;                ; "TROUSER"       ; Cole Chino           ; Blue      ; 3.0
+                                    ; COLE        ; COLE-C-2           ; COLC2 ; Chindo  ;                             ;          ;                ; "TROUSER"       ; Cole Chindo          ; Red       ; 4.0
+

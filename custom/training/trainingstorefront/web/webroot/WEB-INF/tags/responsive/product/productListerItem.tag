@@ -28,6 +28,34 @@
 			<a class="product__list--name" href="${fn:escapeXml(productUrl)}">${ycommerce:sanitizeHTML(product.name)}</a>
 		</ycommerce:testId>
 
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.rating}">
+                <!${ycommerce:sanitizeHTML('BEST SELLER! (')}>
+                ${ycommerce:sanitizeHTML(product.rating)}
+                <!${ycommerce:sanitizeHTML('*)')}>
+            </ycommerce:testId>
+        </div>
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.sku}">
+                ${ycommerce:sanitizeHTML(product.sku)}
+            </ycommerce:testId>
+        </div>
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.material}">
+                ${ycommerce:sanitizeHTML(product.material)}
+            </ycommerce:testId>
+        </div>
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.color}">
+                ${ycommerce:sanitizeHTML(product.color)}
+            </ycommerce:testId>
+        </div>
+        <div>
+            <ycommerce:testId code="searchPage_productName_link_${product.supplier}">
+                ${ycommerce:sanitizeHTML(product.supplier)}
+            </ycommerce:testId>
+        </div>
+
 		<div class="product__list--price-panel">
 			<c:if test="${not empty product.potentialPromotions}">
 				<div class="product__listing--promo">

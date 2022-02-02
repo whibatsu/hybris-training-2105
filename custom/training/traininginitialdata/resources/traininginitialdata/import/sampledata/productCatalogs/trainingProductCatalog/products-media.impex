@@ -53,6 +53,13 @@ INSERT_UPDATE Media; mediaFormat(qualifier); code[unique = true]         ; $medi
                    ; 65Wx65H               ; media-cole-chino-normal     ; $siteResource/images/product/chino.jpeg    ;                             ;                ; images ;
                    ; 30Wx30H               ; media-cole-chino-thumbnails ; $siteResource/images/product/chino.jpeg    ;                             ;                ; images ;
 
+; 1200Wx1200H ; media-cole-chino2-picture    ; $siteResource/images/product/chino.jpeg ; ; ; images
+; 515Wx515H   ; media-cole-chino2-thumbnail  ; $siteResource/images/product/chino.jpeg ; ; ; images ;
+; 300Wx300H   ; media-cole-chino2-detail     ; $siteResource/images/product/chino.jpeg ; ; ; images ;
+; 96Wx96H     ; media-cole-chino2-other      ; $siteResource/images/product/chino.jpeg ; ; ; images ;
+; 65Wx65H     ; media-cole-chino2-normal     ; $siteResource/images/product/chino.jpeg ; ; ; images ;
+; 30Wx30H     ; media-cole-chino2-thumbnails ; $siteResource/images/product/chino.jpeg ; ; ; images ;
+
 # Create Media Containers
 INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                                                                                                                                                                  ; $catalogVersion
                             ; converse-medias         ; media-converse-picture,media-converse-picture,media-converse-thumbnail,media-converse-detail,media-converse-other,media-converse-normal,media-converse-thumbnails        ; ;
@@ -61,6 +68,7 @@ INSERT_UPDATE MediaContainer; qualifier[unique = true]; $medias                 
                             ; cole-medias             ; media-cole-picture,media-cole-picture,media-cole-thumbnail,media-cole-detail,media-cole-other,media-cole-normal,media-cole-thumbnails                                    ; ;
 
                             ; cole-chino-medias       ; media-cole-chino-picture, media-cole-chino-thumbnail, media-cole-chino-detail, media-cole-chino-other, media-cole-chino-normal, media-cole-chino-thumbnails              ; ;
+                            ; cole-chino2-medias       ; media-cole-chino-picture, media-cole-chino-thumbnail, media-cole-chino-detail, media-cole-chino-other, media-cole-chino-normal, media-cole-chino-thumbnails              ; ;
 
 
 # Update Products with Media and Media Containers
@@ -74,4 +82,5 @@ UPDATE Product; code[unique = true]; $picture                 ; $thumbnail      
               ; COLE-T-1           ; media-cole-picture       ; media-cole-thumbnail       ; media-cole-detail       ; media-cole-other       ; media-cole-normal       ; media-cole-thumbnails       ; cole-medias       ;
 
               ; COLE-C-1           ; media-cole-chino-picture ; media-cole-chino-thumbnail ; media-cole-chino-detail ; media-cole-chino-other ; media-cole-chino-normal ; media-cole-chino-thumbnails ; cole-chino-medias ;
+              ; COLE-C-2           ; media-cole-chino2-picture ; media-cole-chino2-thumbnail ; media-cole-chino2-detail ; media-cole-chino2-other ; media-cole-chino2-normal ; media-cole-chino2-thumbnails ; cole-chino2-medias ;
 
