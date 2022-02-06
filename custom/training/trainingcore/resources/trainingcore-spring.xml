@@ -563,4 +563,21 @@
 	<bean id="trainingSupplierService" class="org.training.core.supplier.service.impl.TrainingSupplierServiceImpl" />
 	<alias alias="trainingSupplierDao" name="trainingSupplierDao" />
 	<bean id="trainingSupplierDao" class="org.training.core.supplier.dao.impl.TrainingSupplierDaoImpl" />
+
+	<bean id="testActionProcessDefinitionResource" class="de.hybris.platform.processengine.definition.ProcessDefinitionResource">
+		<property name="resource" value="classpath:/trainingcore/processes/test/test-action-process.xml"/>
+	</bean>
+	<import resource="/trainingcore/processes/test/test-action-process-spring.xml"/>
+
+	<bean id="abstractPOSApprovalActionJob" class="org.training.core.workflow.actions.AbstractPOSApprovalActionJob"
+		  abstract="true">
+	</bean>
+	<bean id="registrationPOSRejectionActionJob" class="org.training.core.workflow.actions.POSRejectionActionJob" parent="abstractPOSApprovalActionJob"/>
+	<bean id="registrationPOSApprovalActionJob" class="org.training.core.workflow.actions.POSApprovalActionJob" parent="abstractPOSApprovalActionJob"/>
+
+	<bean id="abstractCustomerApprovalActionJob" class="org.training.core.workflow.actions.AbstractCustomerApprovalActionJob"
+		  abstract="true">
+	</bean>
+	<bean id="registrationCustomerRejectionActionJob" class="org.training.core.workflow.actions.CustomerRejectionActionJob" parent="abstractCustomerApprovalActionJob"/>
+	<bean id="registrationCustomerApprovalActionJob" class="org.training.core.workflow.actions.CustomerApprovalActionJob" parent="abstractCustomerApprovalActionJob"/>
 </beans>

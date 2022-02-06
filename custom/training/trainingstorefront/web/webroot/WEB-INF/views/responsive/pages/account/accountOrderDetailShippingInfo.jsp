@@ -23,6 +23,18 @@
                                 <order:paymentDetailsItem order="${orderData}"/>
                             </div>
                         </c:if>
+                        <div class="value-order">
+                            ${orderData.paymentInfo.billingAddress.title}&nbsp;
+                            ${orderData.paymentInfo.billingAddress.firstName}&nbsp;
+                            ${orderData.paymentInfo.billingAddress.lastName}&nbsp
+                            <br>
+                            ${orderData.paymentInfo.billingAddress.line1}
+                            <br>
+                            ${orderData.deliveryMode.name}
+                            <br>
+                            ${orderData.paymentInfo.billingAddress.country.name}
+                        </div
+
                     </div>
                 </div>
             </div>

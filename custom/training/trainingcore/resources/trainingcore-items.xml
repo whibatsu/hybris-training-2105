@@ -228,6 +228,17 @@
                     </index>
                 </indexes>
             </itemtype>
+
+            <itemtype code="TestActionProcess"
+                      jaloclass="de.hybris.platform.commerceservices.jalo.process.TestActionProcess"
+                      extends="BusinessProcess">
+                <attributes>
+                    <attribute qualifier="something" type="java.lang.String">
+                        <persistence type="property"/>
+                        <description>something</description>
+                    </attribute>
+                </attributes>
+            </itemtype>
         </typegroup>
 
     </itemtypes>
