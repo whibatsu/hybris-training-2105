@@ -569,3 +569,23 @@ UPDATE FooterNavigationComponent;$contentCV[unique=true];uid[unique=true];notice
 UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=en];
                             ;;TrainingParagraphComponent;"Test Training Page";
                             ;;TrainingParagraphComponent2;"Test Training Page - Bottom Slot";
+
+#9 Training Template Paragraph Component
+INSERT_UPDATE Media;mediaFormat(qualifier);$contentCV[unique=true];code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];mime[default='image/svg+xml'];realfilename;folder(qualifier)[default='images'];altText
+                   ;widescreen;;Elec_1400x401_ErrorPage_EN_1400W.svg;$siteResource/images/banners/site/Elec_1400x401_ErrorPage_EN_1400W.svg;;Elec_1400x401_ErrorPage_EN_1400W.svg;;"Page not found"
+                   ;mobile;;Elec_480x170_ErrorPage_EN_480W.svg;$siteResource/images/banners/site/Elec_1400x401_ErrorPage_EN_1400W.svg;;Elec_1400x401_ErrorPage_EN_1400W.svg;;"Page not found"
+                   ;tablet;;Elec_770x221_ErrorPage_EN_770W.svg;$siteResource/images/banners/site/Elec_1400x401_ErrorPage_EN_1400W.svg;;Elec_1400x401_ErrorPage_EN_1400W.svg;;"Page not found"
+                   ;desktop;;Elec_960x275_ErrorPage_EN_960W.svg;$siteResource/images/banners/site/Elec_1400x401_ErrorPage_EN_1400W.svg;;Elec_1400x401_ErrorPage_EN_1400W.svg;;"Page not found"
+
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$contentCV[unique=true]
+                            ;electronics-errorpage-pagenotfound;Elec_480x170_ErrorPage_EN_480W.svg,Elec_770x221_ErrorPage_EN_770W.svg,Elec_960x275_ErrorPage_EN_960W.svg,Elec_1400x401_ErrorPage_EN_1400W.svg
+
+UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];$mediaContainer
+                                             ;;BannerDay16TrainingTemplate;electronics-errorpage-pagenotfound
+
+UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];content[lang=$lang]
+                                   ;;TrainingTemplateParagraphComponent2;"Paragraph Section 2"
+                                   ;;TrainingTemplateParagraphComponent3;"Paragraph Section 3"
+                                   ;;TrainingTemplateParagraphComponent4;"Paragraph Section 4"
+                                   ;;TrainingTemplateParagraphComponent5;"Paragraph Section 5"
+
