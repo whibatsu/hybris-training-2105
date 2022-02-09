@@ -948,30 +948,33 @@ INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTe
                          ;;testing-page;Testing Page;TrainingPageTemplate;testing-page
 
 
-# Training
+#1 Training
 INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
 # Training Template Page
-;;TrainingTemplate;Template page for training purpose;training/TrainingTemplatePage;ContentPage;false
-# Training Template Content Slot Name
+;;TrainingTemplate;Template page for training purpose;training/trainingTemplate;ContentPage;;
+#2 Training Template Content Slot Name
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='TrainingTemplate'];validComponentTypes(code);compTypeGroup(code)
+#mandatory
                              ;SiteLogo;;;logo
                              ;HeaderLinks;;;headerlinks
                              ;SearchBox;;;searchbox
                              ;MiniCart;;;minicart
                              ;NavigationBar;;;navigation
-                             ;Section1;;CMSParagraphComponent,SimpleResponsiveBannerComponent
-                             ;Section2;;;wide
+#additional
+                             ;Section1;;;wide
+                             ;Section2;;;narrow
                              ;Section3;;;narrow
-                             ;Section4;;;narrow
-                             ;Section5;;;narrow
+                             ;Section4;;;wide
+                             ;Section5;;;wide
+#mandatory
                              ;Footer;;;footer
                              ;TopHeaderSlot;;;wide
                              ;BottomHeaderSlot;;;wide
                              ;PlaceholderContentSlot;;;
-# Training Template Structur View
+#3 Training Template Structur View
 UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];velocityTemplate[translator=de.hybris.platform.commerceservices.impex.impl.FileLoaderValueTranslator]
 ;;TrainingTemplate ;$jarResourceCms/structure-view/structure_trainingTemplatePage.vm
-# Training Template Content Slot Template
+#4 Training Template Content Slot Template
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='TrainingTemplate'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
                                     ;;SiteLogo-TrainingTemplate;SiteLogo;;SiteLogoSlot;true
                                     ;;HomepageLink-TrainingTemplate;HomepageNavLink;;HomepageNavLinkSlot;true
@@ -983,6 +986,12 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
                                     ;;TopHeaderSlot-TrainingTemplate;TopHeaderSlot;;TopHeaderSlot;true
                                     ;;BottomHeaderSlot-TrainingTemplate;BottomHeaderSlot;;BottomHeaderSlot;true
                                     ;;PlaceholderContentSlot-TrainingTemplate;PlaceholderContentSlot;;PlaceholderContentSlot;true
+#5 Training Template Content Page
+INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
+                         ;;TrainingTemplatePage;Training Template Page;TrainingTemplate;TrainingPage;;;
+
+
+
 
 # Training Account
 INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;frontendTemplateName;restrictedPageTypes(code);active[default=true]
@@ -1024,4 +1033,4 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='false']
                          ;;training-account-page;Training Account Page;TrainingAcPageTemplate;training-account-page
-                         ;;testing-account-page;Testing Account Page;TrainingAcPageTemplate;testing-page
+                         ;;testing-account-page;Testing Account Page;TrainingAcPageTemplate;testing-account-page

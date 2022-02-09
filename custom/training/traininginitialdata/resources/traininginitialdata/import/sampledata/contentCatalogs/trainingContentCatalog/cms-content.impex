@@ -1301,4 +1301,29 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;c
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='testing-page'];contentSlot(uid,$contentCV)[unique=true]
                                 ;;MiddleContent-TestingPage;MiddleContent;;MiddleContent-TestingPage
 
+#6
+INSERT_UPDATE SimpleResponsiveBannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef
+                                ;;BannerDay16TrainingTemplate;Banner for Training Template;;BannerDay16TrainingTemplate
+#7
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;
+                                    ;;TrainingTemplateParagraphComponent2;Training Template Paragraph Component 2;TrainingTemplateParagraphComponent2
+                                    ;;TrainingTemplateParagraphComponent3;Training Template Paragraph Component 3;TrainingTemplateParagraphComponent3
+                                    ;;TrainingTemplateParagraphComponent4;Training Template Paragraph Component 4;TrainingTemplateParagraphComponent4
+                                    ;;TrainingTemplateParagraphComponent5;Training Template Paragraph Component 5;TrainingTemplateParagraphComponent5
+#8 Training Template Content Slot
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;cmsComponents(&componentRef);active[default=true];;
+                         ;;TrainingTemplate_ContentSlot1;Section 1 Day16 Training Template for Page Template;BannerDay16TrainingTemplate
+                         ;;TrainingTemplate_ContentSlot2;Section 2 Day16 Training Template for Page Template;TrainingTemplateParagraphComponent2
+                         ;;TrainingTemplate_ContentSlot3;Section 3 Day16 Training Template for Page Template;TrainingTemplateParagraphComponent3
+                         ;;TrainingTemplate_ContentSlot4;Section 4 Day16 Training Template for Page Template;TrainingTemplateParagraphComponent4
+                         ;;TrainingTemplate_ContentSlot5;Section 5 Day16 Training Template for Page Template;TrainingTemplateParagraphComponent5
+
+# Training Template Content Slot for Page
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='TrainingTemplatePage'];contentSlot(uid,$contentCV)[unique=true];;;
+                    ;;Section1-TrainingTemplatePage;Section1;;TrainingTemplate_ContentSlot1;;;
+                    ;;Section2-TrainingTemplatePage;Section2;;TrainingTemplate_ContentSlot2;;;
+                    ;;Section3-TrainingTemplatePage;Section3;;TrainingTemplate_ContentSlot3;;;
+                    ;;Section4-TrainingTemplatePage;Section4;;TrainingTemplate_ContentSlot4;;;
+                    ;;Section5-TrainingTemplatePage;Section5;;TrainingTemplate_ContentSlot5;;;
+
 
