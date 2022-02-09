@@ -20,6 +20,10 @@ module.exports = function(grunt) {
             files: ['webroot/WEB-INF/_ui-src/responsive/lib/jquery*.js'],
             tasks: ['sync:syncjquery'],
         },
+        customjs: {
+            files: ['webroot/WEB-INF/_ui-src/responsive/lib/custom/*.js'],
+            tasks: ['sync:synccustomjs'],
+        }
     },
     less: {
         default: {
@@ -65,6 +69,13 @@ module.exports = function(grunt) {
     			src: 'jquery*.js',
     			dest: 'webroot/_ui/responsive/common/js',
     		}]
+    	},
+    	synccustomjs: {
+    	    files: [{
+    	        cwd: 'webroot/WEB-INF/_ui-src/responsive/lib/custom',
+    	        src: '*.js',
+    	        dest: 'webroot/_ui/responsive/common/js',
+    	    }]
     	}
     }
     
